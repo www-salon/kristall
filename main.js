@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== MOBILE MENU TOGGLE =====
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
@@ -47,6 +47,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.style.overflow = '';
             });
         });
+        
+        // LANGUAGE SELECT HANDLER FOR MOBILE
+        if (typeof languageSelect !== 'undefined' && languageSelect) {
+            languageSelect.addEventListener('change', function() {
+                // Close mobile menu if open
+                if (window.innerWidth <= 768 && 
+                    hamburger.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+                
+                // Scroll to top (both mobile and desktop)
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
         
         // Close menu when clicking outside on mobile
         document.addEventListener('click', (event) => {
