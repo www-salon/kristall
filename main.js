@@ -1,432 +1,308 @@
-// Navigation active link for RTL
-function updateActiveNavForRTL() {
-    if (document.documentElement.dir === 'rtl') {
-        // Adjust any navigation-specific RTL behaviors
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.style.textAlign = 'right';
+(() => {
+    "use strict";
+
+    const header = document.getElementById("site-header");
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const languageControl = document.getElementById("language-control");
+    const languageTrigger = document.getElementById("language-trigger");
+    const languageMenu = document.getElementById("language-menu");
+    const languageCurrent = document.getElementById("language-current");
+    const languageOptions = [...languageMenu.querySelectorAll("[data-language]")];
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxClose = document.getElementById("lightbox-close");
+    const navLinks = [...document.querySelectorAll('.desktop-nav a[href^="#"]')];
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const getTranslation = (language, key) => {
+        return key.split(".").reduce((value, part) => value?.[part], translations[language]);
+    };
+
+    const applyLanguage = (language, { persist = true } = {}) => {
+        const activeLanguage = translations[language] ? language : "de";
+        const isArabic = activeLanguage === "ar";
+
+        document.documentElement.lang = activeLanguage;
+        document.documentElement.dir = isArabic ? "rtl" : "ltr";
+        languageCurrent.textContent = activeLanguage.toUpperCase();
+        languageOptions.forEach((option) => {
+            option.setAttribute("aria-selected", String(option.dataset.language === activeLanguage));
         });
-    }
-}
 
-// DOMContentLoaded event listener
-document.addEventListener('DOMContentLoaded', function() {
-    // Initial RTL adjustment
-    updateActiveNavForRTL();
-    
-    // Re-run RTL adjustments when language changes
-    const languageSelect = document.getElementById('language-select');
-    if (languageSelect) {
-        languageSelect.addEventListener('change', function() {
-            setTimeout(updateActiveNavForRTL, 100);
-        });
-    }
-
-    // ===== MOBILE MENU TOGGLE =====
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            
-            // Prevent body scroll when menu is open
-            if (navMenu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+            const value = getTranslation(activeLanguage, element.dataset.i18n);
+            if (typeof value === "string") {
+                element.textContent = value;
             }
         });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+
+        document.querySelectorAll("[data-i18n-content]").forEach((element) => {
+            const value = getTranslation(activeLanguage, element.dataset.i18nContent);
+            if (typeof value === "string") {
+                element.setAttribute("content", value);
+            }
         });
-        
-        // LANGUAGE SELECT HANDLER FOR MOBILE
-        if (typeof languageSelect !== 'undefined' && languageSelect) {
-            languageSelect.addEventListener('change', function() {
-                // Close mobile menu if open
-                if (window.innerWidth <= 768 && 
-                    hamburger.classList.contains('active')) {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-                
-                // Scroll to top (both mobile and desktop)
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
+
+        document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+            const value = getTranslation(activeLanguage, element.dataset.i18nAlt);
+            if (typeof value === "string") {
+                element.alt = value;
+            }
+        });
+
+        if (persist) {
+            localStorage.setItem("kristall-language", activeLanguage);
         }
-        
-        // Close menu when clicking outside on mobile
-        document.addEventListener('click', (event) => {
-            if (window.innerWidth <= 768) {
-                if (navMenu.classList.contains('active') && 
-                    !navMenu.contains(event.target) && 
-                    !hamburger.contains(event.target)) {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            }
-        });
-    }
-    
-    // ===== NAVBAR SCROLL EFFECT =====
-    window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            if (window.scrollY > 50) {
-                navbar.style.padding = '10px 0';
-                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-            } else {
-                navbar.style.padding = '15px 0';
-                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-            }
+    };
+
+    const closeMobileMenu = () => {
+        menuToggle.setAttribute("aria-expanded", "false");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        mobileMenu.classList.remove("open");
+        document.body.classList.remove("menu-open");
+    };
+
+    const updateHeader = () => {
+        header.classList.toggle("scrolled", window.scrollY > 20);
+    };
+
+    const setupRevealAnimations = () => {
+        const elements = document.querySelectorAll(".reveal");
+
+        if (reducedMotion || !("IntersectionObserver" in window)) {
+            elements.forEach((element) => element.classList.add("visible"));
+            return;
         }
-    });
-    
-    // ===== GALLERY FUNCTIONALITY =====
-    const galleryThumbnails = document.querySelectorAll('.thumbnail');
-    const mainGalleryImage = document.getElementById('main-gallery-image');
-    
-    if (galleryThumbnails.length > 0 && mainGalleryImage) {
-        galleryThumbnails.forEach(thumbnail => {
-            thumbnail.addEventListener('click', function() {
-                galleryThumbnails.forEach(thumb => {
-                    thumb.classList.remove('active');
-                });
-                
-                this.classList.add('active');
-                
-                const newImageSrc = this.getAttribute('data-image');
-                if (newImageSrc) {
-                    mainGalleryImage.src = newImageSrc;
-                    
-                    mainGalleryImage.style.opacity = '0';
-                    setTimeout(() => {
-                        mainGalleryImage.style.opacity = '1';
-                    }, 200);
-                }
-            });
-            
-            // Add touch support for mobile
-            thumbnail.addEventListener('touchstart', function(e) {
-                if (window.innerWidth <= 768) {
-                    galleryThumbnails.forEach(thumb => {
-                        thumb.classList.remove('active');
-                    });
-                    
-                    this.classList.add('active');
-                    
-                    const newImageSrc = this.getAttribute('data-image');
-                    if (newImageSrc) {
-                        mainGalleryImage.src = newImageSrc;
-                        
-                        mainGalleryImage.style.opacity = '0';
-                        setTimeout(() => {
-                            mainGalleryImage.style.opacity = '1';
-                        }, 200);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
                     }
-                    e.preventDefault();
-                }
-            });
-        });
-    }
-    
-    // ===== SERVICE CARDS ANIMATION =====
-    const serviceCards = document.querySelectorAll('.service-card');
-    
-    if (serviceCards.length > 0) {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-        
-        const observerCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        };
-        
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
-        
-        serviceCards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-    }
-    
-    // ===== CRYSTAL ANIMATIONS =====
-    function createFloatingCrystals() {
-        const heroSection = document.querySelector('.hero');
-        if (!heroSection) return;
-        
-        // Only create crystals on desktop for performance
-        if (window.innerWidth > 768) {
-            // Clear existing crystals
-            const existingCrystals = document.querySelectorAll('.floating-crystal');
-            existingCrystals.forEach(crystal => crystal.remove());
-            
-            // Create new floating crystals
-            for (let i = 0; i < 6; i++) {
-                const crystal = document.createElement('div');
-                crystal.className = 'floating-crystal';
-                
-                // Random properties
-                const size = Math.random() * 10 + 5;
-                const posX = Math.random() * 90 + 5;
-                const posY = Math.random() * 90 + 5;
-                const delay = Math.random() * 5;
-                const duration = Math.random() * 8 + 8;
-                
-                // Apply styles
-                crystal.style.width = `${size}px`;
-                crystal.style.height = `${size}px`;
-                crystal.style.left = `${posX}%`;
-                crystal.style.top = `${posY}%`;
-                crystal.style.animationDelay = `${delay}s`;
-                crystal.style.animationDuration = `${duration}s`;
-                crystal.style.opacity = Math.random() * 0.2 + 0.1;
-                
-                heroSection.appendChild(crystal);
-            }
-        }
-    }
-    
-    // Initialize floating crystals
-    createFloatingCrystals();
-    
-    // Recreate crystals on resize (only on desktop)
-    let resizeTimer;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            createFloatingCrystals();
-        }, 250);
-    });
-    
-    // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                
-                // Calculate offset based on screen size
-                let offset = 80;
-                if (window.innerWidth <= 768) {
-                    offset = 70; 
-                }
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - offset,
-                    behavior: 'smooth'
                 });
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px"
             }
+        );
+
+        elements.forEach((element) => observer.observe(element));
+    };
+
+    const setupActiveNavigation = () => {
+        const sections = ["story", "services", "gallery", "visit"]
+            .map((id) => document.getElementById(id))
+            .filter(Boolean);
+
+        if (!("IntersectionObserver" in window)) {
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    navLinks.forEach((link) => {
+                        link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
+                    });
+                });
+            },
+            {
+                rootMargin: "-35% 0px -55% 0px",
+                threshold: 0
+            }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+    };
+
+    const openLightbox = (source, alt) => {
+        lightboxImage.src = source;
+        lightboxImage.alt = alt || "";
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.classList.add("lightbox-open");
+        lightboxClose.focus();
+    };
+
+    const closeLightbox = () => {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("lightbox-open");
+        lightboxImage.src = "";
+    };
+
+    menuToggle.addEventListener("click", () => {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+
+        menuToggle.setAttribute("aria-expanded", String(!isOpen));
+        mobileMenu.setAttribute("aria-hidden", String(isOpen));
+        mobileMenu.classList.toggle("open", !isOpen);
+        document.body.classList.toggle("menu-open", !isOpen);
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMobileMenu);
+    });
+
+    const closeLanguageMenu = () => {
+        languageControl.classList.remove("open");
+        languageTrigger.setAttribute("aria-expanded", "false");
+        languageMenu.hidden = true;
+    };
+
+    const openLanguageMenu = () => {
+        languageControl.classList.add("open");
+        languageTrigger.setAttribute("aria-expanded", "true");
+        languageMenu.hidden = false;
+    };
+
+    languageTrigger.addEventListener("click", () => {
+        const isOpen = languageTrigger.getAttribute("aria-expanded") === "true";
+        if (isOpen) {
+            closeLanguageMenu();
+        } else {
+            openLanguageMenu();
+        }
+    });
+
+    languageOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+            applyLanguage(option.dataset.language);
+            closeLanguageMenu();
+            languageTrigger.focus();
         });
     });
-    
-    // ===== CONTACT FORM SIMULATION =====
-    const ctaButton = document.querySelector('.cta-button');
-    if (ctaButton && ctaButton.getAttribute('href') === '#contact') {
-        ctaButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            let offset = 80;
-            if (window.innerWidth <= 768) {
-                offset = 70;
-            }
-            
-            window.scrollTo({
-                top: document.getElementById('contact').offsetTop - offset,
-                behavior: 'smooth'
-            });
-            
-            const contactSection = document.getElementById('contact');
-            contactSection.style.boxShadow = '0 0 0 3px rgba(184, 134, 11, 0.3)';
-            
-            setTimeout(() => {
-                contactSection.style.boxShadow = 'none';
-            }, 2000);
-        });
-    }
-    
-    // ===== IMAGE LAZY LOADING =====
-    const images = document.querySelectorAll('img[data-src]');
-    if (images.length > 0) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                    observer.unobserve(img);
-                }
-            });
-        }, {
-            rootMargin: '50px 0px',
-            threshold: 0.1
-        });
-        
-        images.forEach(img => imageObserver.observe(img));
-    }
-    
-    // ===== MAP INTERACTION =====
-    const mapContainer = document.querySelector('.map-container');
-    if (mapContainer) {
-        // Only add hover effects on desktop
-        if (window.innerWidth > 768) {
-            mapContainer.addEventListener('mouseenter', function() {
-                this.style.borderColor = 'rgba(184, 134, 11, 0.5)';
-                const mapPin = this.querySelector('.map-pin');
-                if (mapPin) {
-                    mapPin.style.transform = 'scale(1.2)';
-                }
-            });
-            
-            mapContainer.addEventListener('mouseleave', function() {
-                this.style.borderColor = 'rgba(184, 134, 11, 0.3)';
-                const mapPin = this.querySelector('.map-pin');
-                if (mapPin) {
-                    mapPin.style.transform = 'scale(1)';
-                }
-            });
+
+    document.addEventListener("click", (event) => {
+        if (!languageControl.contains(event.target)) {
+            closeLanguageMenu();
         }
-    }
-    
-    // ===== CURRENT YEAR IN FOOTER =====
-    const currentYear = new Date().getFullYear();
-    const yearElements = document.querySelectorAll('.current-year');
-    yearElements.forEach(element => {
-        element.textContent = currentYear;
     });
-    
-    // ===== GO TO TOP BUTTON =====
-    const goTopBtn = document.getElementById('goTopBtn');
-    
-    if (goTopBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                goTopBtn.classList.add('visible');
-            } else {
-                goTopBtn.classList.remove('visible');
-            }
-        });
-        
-        goTopBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Touch support for mobile
-        goTopBtn.addEventListener('touchstart', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-    
-    // ===== ACTIVE NAV LINK ON SCROLL =====
-    function updateActiveNav() {
-        let current = '';
-        const sections = document.querySelectorAll('section[id]');
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            // Adjust offset based on screen size
-            let offset = 150;
-            if (window.innerWidth <= 768) {
-                offset = 100;
-            }
-            
-            if (window.scrollY >= (sectionTop - offset)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('active');
-            }
-        });
-    }
-    
-    window.addEventListener('scroll', updateActiveNav);
-    window.addEventListener('load', updateActiveNav);
-}); 
 
-// ===== ADDITIONAL CRYSTAL STYLES =====
-document.head.insertAdjacentHTML('beforeend', `
-<style>
-    .floating-crystal {
-        position: absolute;
-        background: rgba(184, 134, 11, 0.15);
-        transform: rotate(45deg);
-        pointer-events: none;
-        z-index: 1;
-        animation: floatCrystal linear infinite;
-        display: none;
-    }
-    
-    .floating-crystal:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 50%;
-        height: 50%;
-        background: rgba(10, 10, 10, 0.8);
-        transform: translate(-50%, -50%) rotate(45deg);
-    }
-    
-    @keyframes floatCrystal {
-        0%, 100% {
-            transform: rotate(45deg) translateY(0) translateX(0);
-        }
-        25% {
-            transform: rotate(45deg) translateY(-15px) translateX(8px);
-        }
-        50% {
-            transform: rotate(45deg) translateY(-8px) translateX(15px);
-        }
-        75% {
-            transform: rotate(45deg) translateY(-20px) translateX(-8px);
-        }
-    }
-    
-    @media (min-width: 769px) {
-        .floating-crystal {
-            display: block;
-        }
-    }
-</style>
-`);
+    document.querySelectorAll("[data-gallery]").forEach((item) => {
+        item.addEventListener("click", () => {
+            const image = item.querySelector("img");
+            openLightbox(item.dataset.gallery, image?.alt);
+        });
+    });
 
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeLightbox();
+            closeMobileMenu();
+            closeLanguageMenu();
+        }
+    });
+
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 1080) {
+            closeMobileMenu();
+        }
+    });
+
+    const getLocaleRegion = () => {
+        const locales = navigator.languages?.length ? navigator.languages : [navigator.language];
+
+        for (const locale of locales) {
+            if (!locale) {
+                continue;
+            }
+
+            try {
+                const region = new Intl.Locale(locale).region;
+                if (region) {
+                    return region.toUpperCase();
+                }
+            } catch {
+                const match = locale.match(/[-_]([A-Za-z]{2})\b/);
+                if (match) {
+                    return match[1].toUpperCase();
+                }
+            }
+        }
+
+        return "";
+    };
+
+    const detectAutomaticLanguage = () => {
+        const region = getLocaleRegion();
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+        const browserLanguages = (navigator.languages?.length ? navigator.languages : [navigator.language])
+            .filter(Boolean)
+            .map((locale) => locale.toLowerCase());
+
+        const germanRegions = new Set(["DE", "AT", "CH", "LI", "LU", "BE"]);
+        const middleEastRegions = new Set([
+            "AE", "BH", "CY", "EG", "IL", "IQ", "IR", "JO", "KW", "LB",
+            "OM", "PS", "QA", "SA", "SY", "TR", "YE"
+        ]);
+        const germanTimeZones = new Set([
+            "Europe/Berlin",
+            "Europe/Vienna",
+            "Europe/Zurich",
+            "Europe/Vaduz",
+            "Europe/Luxembourg"
+        ]);
+        const middleEastTimeZones = new Set([
+            "Africa/Cairo",
+            "Asia/Aden",
+            "Asia/Amman",
+            "Asia/Baghdad",
+            "Asia/Bahrain",
+            "Asia/Beirut",
+            "Asia/Damascus",
+            "Asia/Dubai",
+            "Asia/Gaza",
+            "Asia/Hebron",
+            "Asia/Jerusalem",
+            "Asia/Kuwait",
+            "Asia/Muscat",
+            "Asia/Qatar",
+            "Asia/Riyadh",
+            "Asia/Tehran",
+            "Europe/Istanbul"
+        ]);
+
+        if (middleEastRegions.has(region) || middleEastTimeZones.has(timeZone)) {
+            return "ar";
+        }
+
+        if (germanRegions.has(region) || germanTimeZones.has(timeZone)) {
+            return "de";
+        }
+
+        if (browserLanguages.some((locale) => locale.startsWith("ar"))) {
+            return "ar";
+        }
+
+        if (browserLanguages.some((locale) => locale.startsWith("de"))) {
+            return "de";
+        }
+
+        return "en";
+    };
+
+    const savedLanguage = localStorage.getItem("kristall-language");
+    const initialLanguage = savedLanguage || detectAutomaticLanguage();
+
+    applyLanguage(initialLanguage, { persist: Boolean(savedLanguage) });
+    updateHeader();
+    setupRevealAnimations();
+    setupActiveNavigation();
+})();

@@ -1,525 +1,353 @@
-// Translation map
 const translations = {
-    en: {
-        title: "Crystal Men's Salon | Premium Barber in Berlin",
-        meta: {
-            description: "Crystal Men's Salon - Premium barber shop in Berlin. Master craftsmanship, luxurious ambiance, and individual consultation."
-        },
-        nav: {
-            subtitle: "SALON FOR GENTLEMEN",
-            home: "Home",
-            about: "About Us",
-            services: "Services",
-            gallery: "Gallery",
-            contact: "Contact"
-        },
-        hero: {
-            title: "MASTER<span class='highlight'>CRAFT</span><br>IN A LUXURY<span class='highlight'>AMBIENCE</span>",
-            subtitle: "Where tradition meets modern elegance",
-            cta: "Book Appointment"
-        },
-        about: {
-            title: "ABOUT US",
-            intro: "Welcome to the <span class='highlight-text'>Kristall Men's Salon</span>, where precision meets perfection.",
-            description1: "For over a decade, we have been the first address for discerning gentlemen in Berlin who value craftsmanship, exclusive products, and an unforgettable experience.",
-            description2: "Our master barbers combine traditional barber techniques with state-of-the-art styling methods to create the perfect look for every guest.",
-            feature1: {
-                title: "Master Craftsmanship",
-                description: "Annual training for our barbers"
-            },
-            feature2: {
-                title: "Luxury Ambiance",
-                description: "Exclusive interior with maximum comfort"
-            },
-            feature3: {
-                title: "Premium Products",
-                description: "Only selected brands for best results"
-            }
-        },
-        services: {
-            title: "OUR SERVICES",
-            subtitle: "Transparent prices for first-class services",
-            haircut: {
-                title: "Haircut",
-                description: "Professional men's haircut with consultation, hair wash, and styling"
-            },
-            kids: {
-                title: "Kids' Haircuts",
-                description: "Special haircut for children up to 10 years in child-friendly atmosphere"
-            },
-            beardShave: {
-                title: "Beard Shave",
-                description: "Complete beard shave with shaving cream, warm towels, and after-shave care"
-            },
-            beardTrim: {
-                title: "Beard Trim",
-                description: "Beard trimming, shaping, and oil care for a well-groomed look"
-            },
-            faceMask: {
-                title: "Face Mask",
-                description: "Nourishing facial mask for cleansing, revitalization, and skin tightening"
-            },
-            eyebrows: {
-                title: "Eyebrows",
-                description: "Precise eyebrow threading with traditional thread technique"
-            },
-            waxing: {
-                title: "Waxing",
-                description: "Hair removal with wax for small areas like nose or ears"
-            },
-            wash: {
-                title: "Wash",
-                description: "Hair wash with premium shampoo and head massage"
-            },
-            dryStyling: {
-                title: "Dry Styling",
-                description: "Professional dry blow-drying and hair styling"
-            },
-            complete: {
-                title: "Complete Service",
-                description: "Wash · Cut · Beard Shave · Facial Hair Removal (Wax or Thread)"
-            },
-            fullFace: {
-                title: "Full Face Hair Removal",
-                description: "Complete facial hair removal (wax or thread) for flawless skin"
-            },
-            consultation: {
-                title: "Free Consultation",
-                description: "Personal style consultation without obligation. Together we'll find your perfect look."
-            }
-        },
-        gallery: {
-            title: "GALLERY",
-            overlay: {
-                title: "Our Salon Ambiance",
-                description: "Luxurious interior with maximum comfort"
-            }
-        },
-        contact: {
-            title: "CONTACT & LOCATION",
-            address: {
-                title: "Address",
-                details: "Urbanstraße 37<br>10967 Berlin<br>Germany"
-            },
-            phone: {
-                title: "Phone",
-                note: "Telephone appointment booking"
-            },
-            hours: {
-                title: "Opening Hours",
-                weekdays: "Monday - Friday:",
-                saturday: "Saturday:",
-                sunday: "Sunday:",
-                closed: "Closed"
-            },
-            appointment: {
-                title: "Appointment Booking",
-                description: "We value personal consultation. Please book your appointment by phone during our opening hours."
-            }
-        },
-        footer: {
-            subtitle: "SALON FOR GENTLEMEN",
-            copyright: "© 2026 Crystal Men's Salon. All rights reserved."
-        }
-    },
     de: {
-        title: "Kristall Salon für Herren | Premium Barber in Berlin",
         meta: {
-            description: "Kristall Salon für Herren - Premium Herrenfriseur in Berlin. Meisterhandwerk, luxuriöses Ambiente und individuelle Beratung."
+            title: "Kristall Barber Berlin | Herrenfriseur in Kreuzberg",
+            description: "Kristall Salon für Herren in Berlin-Kreuzberg. Präzise Haarschnitte, Bartpflege, klassische Rasur und persönliche Beratung."
+        },
+        accessibility: {
+            skip: "Zum Inhalt springen",
+            language: "Sprache auswählen"
+        },
+        brand: {
+            subtitle: "BARBER BERLIN"
         },
         nav: {
-            subtitle: "SALON FÜR HERREN",
-            home: "Start",
-            about: "Über Uns",
+            story: "Der Salon",
             services: "Leistungen",
             gallery: "Galerie",
-            contact: "Kontakt"
+            visit: "Besuch",
+            book: "Termin buchen"
         },
         hero: {
-            title: "MEISTER<span class='highlight'>HANDWERK</span><br>IN EINEM LUXUS<span class='highlight'>AMBIENTE</span>",
-            subtitle: "Wo Tradition auf moderne Eleganz trifft",
-            cta: "Termin vereinbaren"
+            eyebrow: "BERLIN · KREUZBERG",
+            title: "Guter Stil beginnt mit einem präzisen Schnitt.",
+            lead: "Klassisches Barber-Handwerk, moderne Looks und ehrliche Beratung in der Urbanstraße.",
+            ctaPrimary: "Jetzt Termin buchen",
+            ctaSecondary: "Leistungen ansehen",
+            cardKicker: "HEUTE FÜR DICH DA",
+            cardHoursTitle: "Öffnungszeiten",
+            cardHours: "Mo–Fr 10–19 Uhr · Sa 10–18 Uhr",
+            cardLocationTitle: "Mitten in Kreuzberg",
+            cardLink: "Anfahrt & Kontakt"
         },
-        about: {
-            title: "ÜBER UNS",
-            intro: "Willkommen im <span class='highlight-text'>Kristall Salon für Herren</span>, wo Präzision auf Perfektion trifft.",
-            description1: "Seit über einem Jahrzehnt sind wir die erste Adresse für anspruchsvolle Herren in Berlin, die Wert auf Handwerkskunst, exklusive Produkte und ein unvergessliches Erlebnis legen.",
-            description2: "Unsere Meisterfriseure verbinden traditionelle Barber-Techniken mit modernsten Styling-Methoden, um für jeden Gast den perfekten Look zu kreieren.",
-            feature1: {
-                title: "Meisterhandwerk",
-                description: "Jährliche Weiterbildung unserer Friseure"
-            },
-            feature2: {
-                title: "Luxusambiente",
-                description: "Exklusives Interior mit höchstem Komfort"
-            },
-            feature3: {
-                title: "Premium Produkte",
-                description: "Nur ausgewählte Marken für beste Ergebnisse"
-            }
+        trust: {
+            oneTitle: "Präzision",
+            oneText: "Saubere Konturen, klare Formen.",
+            twoTitle: "Persönlich",
+            twoText: "Ein Look, der wirklich zu dir passt.",
+            threeTitle: "Handwerk",
+            threeText: "Barber-Technik ohne Show."
+        },
+        story: {
+            label: "DER SALON",
+            title: "Nicht einfach Haare schneiden. Einen Look sauber aufbauen.",
+            lead: "Kristall ist ein unkomplizierter Herrenfriseur in Kreuzberg für Männer, die Wert auf einen gepflegten, präzisen Look legen.",
+            body: "Ob klassischer Schnitt, moderner Fade, Bartkontur oder komplette Pflege: Wir nehmen uns Zeit für Form, Proportion und Finish. Ohne unnötigen Luxus, aber mit dem Anspruch, dass du den Salon sichtbar besser verlässt.",
+            pointOne: "Beratung vor jedem Schnitt",
+            pointTwo: "Klassische und moderne Techniken",
+            pointThree: "Klare Ergebnisse, alltagstaugliches Styling",
+            link: "Termin telefonisch vereinbaren",
+            mainImageAlt: "Innenansicht des Kristall Salons",
+            secondaryImageAlt: "Barber im Kristall Salon"
         },
         services: {
-            title: "UNSERE LEISTUNGEN",
-            subtitle: "Transparente Preise für erstklassige Dienstleistungen",
+            label: "LEISTUNGEN",
+            title: "Alles, was ein guter Barber können muss.",
+            intro: "Vom schnellen Fresh-up bis zum vollständigen Barber-Service. Preise erfährst du direkt bei uns im Salon oder telefonisch.",
             haircut: {
-                title: "Haarschnitt",
-                description: "Professioneller Herrenhaarschnitt mit Beratung, Haarwäsche und Styling"
+                title: "Herrenhaarschnitt",
+                text: "Beratung, präziser Schnitt und sauberes Finish.",
+                tag: "CUT"
+            },
+            beard: {
+                title: "Bart & Konturen",
+                text: "Trimmen, formen und definieren für klare Linien.",
+                tag: "BEARD"
+            },
+            shave: {
+                title: "Klassische Rasur",
+                text: "Glatte Rasur mit Vorbereitung, warmem Tuch und Pflege.",
+                tag: "SHAVE"
+            },
+            care: {
+                title: "Gesicht & Pflege",
+                text: "Maske, Augenbrauen und Haarentfernung mit Wachs oder Faden.",
+                tag: "CARE"
             },
             kids: {
-                title: "Kinderfrisuren",
-                description: "Spezieller Haarschnitt für Kinder bis 10 Jahre in kindgerechter Atmosphäre"
-            },
-            beardShave: {
-                title: "Bart Rasur",
-                description: "Komplette Bartrasur mit Rasiercreme, warmen Tüchern und After-Shave-Pflege"
-            },
-            beardTrim: {
-                title: "Bart Schneiden",
-                description: "Bart trimmen, in Form schneiden und mit Öl pflegen für gepflegte Optik"
-            },
-            faceMask: {
-                title: "Maske für Gesicht",
-                description: "Pflegende Gesichtsmaske zur Reinigung, Revitalisierung und Hautstraffung"
-            },
-            eyebrows: {
-                title: "Augenbrauen",
-                description: "Präzises Augenbrauen zupfen mit traditioneller Fadentechnik"
-            },
-            waxing: {
-                title: "Wachs",
-                description: "Haarentfernung mit Wachs für kleine Bereiche wie Nase oder Ohren"
-            },
-            wash: {
-                title: "Waschen",
-                description: "Haare waschen mit Premium-Shampoo und Kopfmassage"
-            },
-            dryStyling: {
-                title: "Trocken Föhnen",
-                description: "Professionelles Trockenföhnen und Styling der Haare"
+                title: "Kinderhaarschnitt",
+                text: "Ruhiger, sauberer Schnitt für die jüngeren Gäste.",
+                tag: "KIDS"
             },
             complete: {
                 title: "Komplett-Service",
-                description: "Waschen · Schneiden · Bartrasieren · Gesichtshaarentfernung (Wachs oder Faden)"
+                text: "Waschen, schneiden, Bart und Gesichtspflege als Gesamtpaket.",
+                tag: "FULL"
             },
-            fullFace: {
-                title: "Gesichtshaarentfernung",
-                description: "Komplette Gesichtshaarentfernung (Wachs oder Faden) für makellose Haut"
-            },
-            consultation: {
-                title: "Kostenlose Beratung",
-                description: "Persönliche Stilberatung ohne Verpflichtung. Gemeinsam finden wir Ihren perfekten Look."
-            }
+            note: "Du bist unsicher, was du brauchst? Komm vorbei oder ruf kurz an. Wir beraten dich gern."
         },
         gallery: {
-            title: "GALERIE",
-            overlay: {
-                title: "Unser Salon Ambiente",
-                description: "Luxuriöses Interior mit höchstem Komfort"
-            }
+            label: "IM SALON",
+            title: "Echt. Lokal. Kreuzberg.",
+            intro: "Kein Stockfoto-Showroom. Das ist unser echter Salon in der Urbanstraße und das Team, das dich hier empfängt.",
+            imageOneAlt: "Außenansicht des Kristall Salons",
+            imageOneLabel: "Urbanstraße 37",
+            imageTwoAlt: "Barber im Kristall Salon",
+            imageTwoLabel: "Dein Barber",
+            imageThreeAlt: "Arbeitsplätze im Kristall Salon",
+            imageThreeLabel: "Der Salon",
+            imageFourAlt: "Barberstuhl im Kristall Salon",
+            imageFourLabel: "Der Platz für deinen nächsten Schnitt"
         },
-        contact: {
-            title: "KONTAKT & ANFAHRT",
-            address: {
-                title: "Adresse",
-                details: "Urbanstraße 37<br>10967 Berlin<br>Deutschland"
-            },
-            phone: {
-                title: "Telefon",
-                note: "Telefonische Terminvereinbarung"
-            },
-            hours: {
-                title: "Öffnungszeiten",
-                weekdays: "Montag - Freitag:",
-                saturday: "Samstag:",
-                sunday: "Sonntag:",
-                closed: "Geschlossen"
-            },
-            appointment: {
-                title: "Terminvereinbarung",
-                description: "Wir legen Wert auf persönliche Beratung. Bitte vereinbaren Sie Ihren Termin telefonisch während unserer Öffnungszeiten."
-            }
+        visit: {
+            label: "KOMM VORBEI",
+            title: "Dein nächster Schnitt ist in Kreuzberg.",
+            intro: "Ruf uns für deinen Termin an. Du findest uns in der Urbanstraße 37, nur wenige Minuten vom Hermannplatz entfernt.",
+            phoneLabel: "TERMIN & FRAGEN",
+            addressTitle: "Adresse",
+            hoursTitle: "Öffnungszeiten",
+            hoursWeekdays: "Mo–Fr · 10:00–19:00",
+            hoursSaturday: "Sa · 10:00–18:00",
+            hoursSunday: "So · Geschlossen"
         },
         footer: {
-            subtitle: "SALON FÜR HERREN",
-            copyright: "© 2026 Kristall Salon für Herren. Alle Rechte vorbehalten."
-        }
+            line: "Präzise Schnitte. Klare Konturen. Kreuzberg.",
+            copyright: "© 2026 Kristall Barber Berlin. Alle Rechte vorbehalten."
+        },
+        mobileBooking: "Termin buchen"
     },
-    ar: {
-        title: "صالون كريستال للرجال | حلاق ممتاز في برلين",
+    en: {
         meta: {
-            description: "صالون كريستال للرجال - صالون حلاقة ممتاز في برلين. حرفية متقنة، أجواء فاخرة، واستشارة فردية."
+            title: "Kristall Barber Berlin | Men's Barber in Kreuzberg",
+            description: "Kristall men's barber in Berlin-Kreuzberg. Precision haircuts, beard care, classic shaves and personal consultation."
+        },
+        accessibility: {
+            skip: "Skip to content",
+            language: "Choose language"
+        },
+        brand: {
+            subtitle: "BARBER BERLIN"
         },
         nav: {
-            subtitle: "صالون للرجال",
-            home: "الرئيسية",
-            about: "من نحن",
-            services: "الخدمات",
-            gallery: "معرض الصور",
-            contact: "اتصل بنا"
+            story: "The shop",
+            services: "Services",
+            gallery: "Gallery",
+            visit: "Visit",
+            book: "Book appointment"
         },
         hero: {
-            title: "إتقان<span class='highlight'>الحرفية</span><br>في أجواء<span class='highlight'>فاخرة</span>",
-            subtitle: "حيث يلتقي التقليد بالأناقة الحديثة",
-            cta: "حجز موعد"
+            eyebrow: "BERLIN · KREUZBERG",
+            title: "Good style starts with a precise cut.",
+            lead: "Classic barber craft, modern looks and straight advice on Urbanstraße.",
+            ctaPrimary: "Book an appointment",
+            ctaSecondary: "View services",
+            cardKicker: "HERE FOR YOU TODAY",
+            cardHoursTitle: "Opening hours",
+            cardHours: "Mon–Fri 10–19 · Sat 10–18",
+            cardLocationTitle: "Right in Kreuzberg",
+            cardLink: "Directions & contact"
         },
-        about: {
-            title: "من نحن",
-            intro: "مرحبًا بكم في <span class='highlight-text'>صالون كريستال للرجال</span>، حيث تلتقي الدقة بالكمال.",
-            description1: "لأكثر من عقد من الزمان، كنا العنوان الأول للرجال المميزين في برلين الذين يقدرون الحرفية والمنتجات الحصرية والتجربة التي لا تنسى.",
-            description2: "يجمع حلاقونا الماهرون بين تقنيات الحلاقة التقليدية وأحدث أساليب التصفيف لخلق المظهر المثالي لكل ضيف.",
-            feature1: {
-                title: "إتقان الحرفية",
-                description: "تدريب سنوي لحلاقينا"
-            },
-            feature2: {
-                title: "أجواء فاخرة",
-                description: "ديكور داخلي حصري بأقصى درجات الراحة"
-            },
-            feature3: {
-                title: "منتجات مميزة",
-                description: "فقط العلامات التجارية المختارة لأفضل النتائج"
-            }
+        trust: {
+            oneTitle: "Precision",
+            oneText: "Clean contours, defined shapes.",
+            twoTitle: "Personal",
+            twoText: "A look that actually suits you.",
+            threeTitle: "Craft",
+            threeText: "Real barber technique, no gimmicks."
+        },
+        story: {
+            label: "THE SHOP",
+            title: "Not just cutting hair. Building the look properly.",
+            lead: "Kristall is a straightforward men's barber in Kreuzberg for anyone who values a clean, precise and well-groomed look.",
+            body: "Whether you want a classic cut, modern fade, beard contour or complete grooming, we take time for shape, proportion and finish. No unnecessary luxury, just the standard that you should leave looking clearly better than when you arrived.",
+            pointOne: "Consultation before every cut",
+            pointTwo: "Classic and modern techniques",
+            pointThree: "Clean results and everyday styling",
+            link: "Book your appointment by phone",
+            mainImageAlt: "Interior of Kristall barber shop",
+            secondaryImageAlt: "Barber inside Kristall barber shop"
         },
         services: {
-            title: "خدماتنا",
-            subtitle: "أسعار شفافة لخدمات من الدرجة الأولى",
+            label: "SERVICES",
+            title: "Everything a good barber should do well.",
+            intro: "From a quick fresh-up to the complete barber service. Ask us in the shop or by phone for current prices.",
             haircut: {
-                title: "قص الشعر",
-                description: "قص شعر رجالي محترف مع استشارة، غسل الشعر، وتصفيف"
+                title: "Men's haircut",
+                text: "Consultation, precise cut and clean finish.",
+                tag: "CUT"
+            },
+            beard: {
+                title: "Beard & contours",
+                text: "Trim, shape and define for clean lines.",
+                tag: "BEARD"
+            },
+            shave: {
+                title: "Classic shave",
+                text: "Close shave with preparation, warm towel and aftercare.",
+                tag: "SHAVE"
+            },
+            care: {
+                title: "Face & care",
+                text: "Face mask, eyebrows and hair removal with wax or thread.",
+                tag: "CARE"
             },
             kids: {
-                title: "قصات الأطفال",
-                description: "قص شعر خاص للأطفال حتى 10 سنوات في أجواء مناسبة للأطفال"
-            },
-            beardShave: {
-                title: "حلاقة اللحية",
-                description: "حلاقة كاملة للحية مع كريم الحلاقة، مناديل دافئة، وعناية ما بعد الحلاقة"
-            },
-            beardTrim: {
-                title: "تشذيب اللحية",
-                description: "تشذيب وتشكيل اللحية والعناية بالزيت لمظهر أنيق"
-            },
-            faceMask: {
-                title: "قناع الوجه",
-                description: "قناع وجه مغذي للتنظيف، التجديد، وتنقية البشرة"
-            },
-            eyebrows: {
-                title: "الحواجب",
-                description: "تشذيب دقيق للحواجب بتقنية الخيط التقليدية"
-            },
-            waxing: {
-                title: "إزالة الشعر بالشمع",
-                description: "إزالة الشعر بالشمع للمناطق الصغيرة مثل الأنف أو الأذنين"
-            },
-            wash: {
-                title: "غسل الشعر",
-                description: "غسل الشعر بشامبو ممتاز وتدليك للرأس"
-            },
-            dryStyling: {
-                title: "تصفيف جاف",
-                description: "تجفيف وتصفيف محترف للشعر"
+                title: "Kids' haircut",
+                text: "A calm, clean cut for younger guests.",
+                tag: "KIDS"
             },
             complete: {
-                title: "خدمة كاملة",
-                description: "غسل · قص · حلاقة اللحية · إزالة شعر الوجه (شمع أو خيط)"
+                title: "Complete service",
+                text: "Wash, cut, beard and facial care as one complete visit.",
+                tag: "FULL"
             },
-            fullFace: {
-                title: "إزالة شعر الوجه الكاملة",
-                description: "إزالة شعر الوجه الكاملة (شمع أو خيط) لبشرة خالية من العيوب"
-            },
-            consultation: {
-                title: "استشارة مجانية",
-                description: "استشارة أسلوب شخصية دون التزام. معًا سنجد مظهرك المثالي."
-            }
+            note: "Not sure what you need? Drop in or give us a quick call. We'll be happy to advise you."
         },
         gallery: {
-            title: "معرض الصور",
-            overlay: {
-                title: "أجواء صالوننا",
-                description: "ديكور داخلي فاخر بأقصى درجات الراحة"
-            }
+            label: "IN THE SHOP",
+            title: "Real. Local. Kreuzberg.",
+            intro: "No stock-photo showroom. This is our actual shop on Urbanstraße and the team waiting to welcome you.",
+            imageOneAlt: "Exterior of Kristall barber shop",
+            imageOneLabel: "Urbanstraße 37",
+            imageTwoAlt: "Barber inside Kristall barber shop",
+            imageTwoLabel: "Your barber",
+            imageThreeAlt: "Workstations inside Kristall barber shop",
+            imageThreeLabel: "The shop",
+            imageFourAlt: "Barber chair inside Kristall barber shop",
+            imageFourLabel: "Your next cut starts here"
         },
-        contact: {
-            title: "اتصل بنا والموقع",
-            address: {
-                title: "العنوان",
-                details: "Urbanstraße 37<br>10967 برلين<br>ألمانيا"
-            },
-            phone: {
-                title: "الهاتف",
-                note: "حجز موعد هاتفي"
-            },
-            hours: {
-                title: "ساعات العمل",
-                weekdays: "الاثنين - الجمعة:",
-                saturday: "السبت:",
-                sunday: "الأحد:",
-                closed: "مغلق"
-            },
-            appointment: {
-                title: "حجز موعد",
-                description: "نحن نقدر الاستشارة الشخصية. يرجى حجز موعدك هاتفيًا خلال ساعات عملنا."
-            }
+        visit: {
+            label: "COME BY",
+            title: "Your next cut is in Kreuzberg.",
+            intro: "Call us to book your appointment. You'll find us at Urbanstraße 37, just a few minutes from Hermannplatz.",
+            phoneLabel: "BOOKING & QUESTIONS",
+            addressTitle: "Address",
+            hoursTitle: "Opening hours",
+            hoursWeekdays: "Mon–Fri · 10:00–19:00",
+            hoursSaturday: "Sat · 10:00–18:00",
+            hoursSunday: "Sun · Closed"
         },
         footer: {
-            subtitle: "صالون للرجال",
-            copyright: "جميع الحقوق محفوظة لصالون كريستال للرجال © 2026"
-        }
+            line: "Precise cuts. Clean contours. Kreuzberg.",
+            copyright: "© 2026 Kristall Barber Berlin. All rights reserved."
+        },
+        mobileBooking: "Book appointment"
+    },
+    ar: {
+        meta: {
+            title: "كريستال باربر برلين | حلاق رجالي في كرويتسبيرغ",
+            description: "صالون كريستال للرجال في برلين كرويتسبيرغ، قصات دقيقة، عناية باللحية، حلاقة كلاسيكية واستشارة شخصية."
+        },
+        accessibility: {
+            skip: "الانتقال إلى المحتوى",
+            language: "اختيار اللغة"
+        },
+        brand: {
+            subtitle: "باربر برلين"
+        },
+        nav: {
+            story: "الصالون",
+            services: "الخدمات",
+            gallery: "الصور",
+            visit: "زيارتنا",
+            book: "حجز موعد"
+        },
+        hero: {
+            eyebrow: "برلين · كرويتسبيرغ",
+            title: "الأناقة الجيدة تبدأ بقصّة دقيقة.",
+            lead: "حرفة الحلاقة الكلاسيكية، إطلالات عصرية ونصيحة صريحة في شارع أوربان.",
+            ctaPrimary: "احجز موعدك الآن",
+            ctaSecondary: "عرض الخدمات",
+            cardKicker: "نحن هنا من أجلك اليوم",
+            cardHoursTitle: "ساعات العمل",
+            cardHours: "الإثنين–الجمعة 10–19 · السبت 10–18",
+            cardLocationTitle: "في قلب كرويتسبيرغ",
+            cardLink: "الموقع والتواصل"
+        },
+        trust: {
+            oneTitle: "الدقة",
+            oneText: "حدود نظيفة وشكل واضح.",
+            twoTitle: "شخصي",
+            twoText: "إطلالة تناسبك أنت.",
+            threeTitle: "الحرفة",
+            threeText: "تقنيات حلاقة حقيقية بلا مبالغة."
+        },
+        story: {
+            label: "الصالون",
+            title: "ليست مجرد قصّة شعر، بل بناء إطلالة متكاملة.",
+            lead: "كريستال صالون رجالي عملي في كرويتسبيرغ لمن يهتم بإطلالة مرتبة ودقيقة.",
+            body: "سواء كنت تريد قصّة كلاسيكية، فيد عصري، تحديد اللحية أو عناية كاملة، نهتم بالشكل والتناسق واللمسة النهائية. بدون مظاهر زائدة، وبمعيار بسيط: أن تغادر الصالون بإطلالة أفضل بوضوح.",
+            pointOne: "استشارة قبل كل قصّة",
+            pointTwo: "تقنيات كلاسيكية وعصرية",
+            pointThree: "نتائج نظيفة وتسريح عملي يوميًا",
+            link: "احجز موعدك هاتفيًا",
+            mainImageAlt: "المساحة الداخلية لصالون كريستال",
+            secondaryImageAlt: "الحلاق داخل صالون كريستال"
+        },
+        services: {
+            label: "الخدمات",
+            title: "كل ما يجب أن يتقنه الحلاق الجيد.",
+            intro: "من ترتيب سريع للإطلالة إلى خدمة الحلاقة الكاملة. اسألنا في الصالون أو عبر الهاتف عن الأسعار الحالية.",
+            haircut: {
+                title: "قص شعر رجالي",
+                text: "استشارة، قص دقيق ولمسة نهائية مرتبة.",
+                tag: "قص"
+            },
+            beard: {
+                title: "اللحية والتحديد",
+                text: "تشذيب وتشكيل وتحديد لخطوط نظيفة.",
+                tag: "لحية"
+            },
+            shave: {
+                title: "حلاقة كلاسيكية",
+                text: "حلاقة ناعمة مع التحضير والمنشفة الدافئة والعناية.",
+                tag: "حلاقة"
+            },
+            care: {
+                title: "الوجه والعناية",
+                text: "ماسك للوجه، الحواجب وإزالة الشعر بالشمع أو الخيط.",
+                tag: "عناية"
+            },
+            kids: {
+                title: "قص شعر للأطفال",
+                text: "قصّة هادئة ومرتبة للضيوف الصغار.",
+                tag: "أطفال"
+            },
+            complete: {
+                title: "الخدمة الكاملة",
+                text: "غسيل، قص، لحية وعناية بالوجه في زيارة واحدة.",
+                tag: "كامل"
+            },
+            note: "غير متأكد من الخدمة المناسبة لك؟ زرنا أو اتصل بنا وسنساعدك في الاختيار."
+        },
+        gallery: {
+            label: "داخل الصالون",
+            title: "حقيقي. محلي. كرويتسبيرغ.",
+            intro: "لا صور جاهزة أو استوديو وهمي. هذا هو صالوننا الحقيقي في شارع أوربان والفريق الذي يستقبلك هنا.",
+            imageOneAlt: "الواجهة الخارجية لصالون كريستال",
+            imageOneLabel: "Urbanstraße 37",
+            imageTwoAlt: "الحلاق داخل صالون كريستال",
+            imageTwoLabel: "حلاقك",
+            imageThreeAlt: "أماكن العمل داخل صالون كريستال",
+            imageThreeLabel: "الصالون",
+            imageFourAlt: "كرسي الحلاقة داخل صالون كريستال",
+            imageFourLabel: "هنا تبدأ قصّتك القادمة"
+        },
+        visit: {
+            label: "زرنا",
+            title: "قصّتك القادمة في كرويتسبيرغ.",
+            intro: "اتصل بنا لحجز موعدك. ستجدنا في Urbanstraße 37، على بعد دقائق قليلة من Hermannplatz.",
+            phoneLabel: "الحجز والاستفسارات",
+            addressTitle: "العنوان",
+            hoursTitle: "ساعات العمل",
+            hoursWeekdays: "الإثنين–الجمعة · 10:00–19:00",
+            hoursSaturday: "السبت · 10:00–18:00",
+            hoursSunday: "الأحد · مغلق"
+        },
+        footer: {
+            line: "قصات دقيقة. حدود نظيفة. كرويتسبيرغ.",
+            copyright: "© 2026 كريستال باربر برلين. جميع الحقوق محفوظة."
+        },
+        mobileBooking: "حجز موعد"
     }
 };
-
-// Function to update content based on language
-function updateContent(lang) {
-    // Validate language
-    if (!translations[lang]) {
-        console.warn(`Invalid language: ${lang}. Defaulting to 'en'.`);
-        lang = 'en';
-    }
-
-    console.log(`Updating content to language: ${lang}`);
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-
-    document.title = translations[lang]?.title || "Crystal Men's Salon | Premium Barber in Berlin";
-
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription && translations[lang]?.meta?.description) {
-        metaDescription.content = translations[lang].meta.description;
-    }
-
-    // Update text content
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        const keys = key.split('.');
-        let value = translations[lang];
-        
-        for (const k of keys) {
-            if (!value || typeof value !== 'object' || !(k in value)) {
-                console.warn(`Translation missing for key: ${key} in language: ${lang}`);
-                value = null;
-                break;
-            }
-            value = value[k];
-        }
-        
-        if (value && typeof value === 'string') {
-            element.innerHTML = value;
-        }
-    });
-}
-
-// Function to get country code using geolocation API
-async function getCountryCode() {
-    try {
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
-        console.log(`Geolocation API returned country code: ${data.country_code}`);
-        return data.country_code;
-    } catch (error) {
-        console.error('Error fetching geolocation:', error);
-        return null;
-    }
-}
-
-// Function to map country code to supported language
-function getLanguageFromCountry(countryCode) {
-    const countryLangMap = {
-        // German-speaking countries
-        'DE': 'de',      // Germany
-        'AT': 'de',      // Austria
-        'CH': 'de',      // Switzerland
-        'LI': 'de',      // Liechtenstein
-        'LU': 'de',      // Luxembourg
-        'BE': 'de',      // Belgium (German-speaking community)
-        
-        // Arabic-speaking countries (Middle East)
-        'SA': 'ar',      // Saudi Arabia
-        'AE': 'ar',      // UAE
-        'BH': 'ar',      // Bahrain
-        'QA': 'ar',      // Qatar
-        'KW': 'ar',      // Kuwait
-        'OM': 'ar',      // Oman
-        'YE': 'ar',      // Yemen
-        'EG': 'ar',      // Egypt
-        'JO': 'ar',      // Jordan
-        'LB': 'ar',      // Lebanon
-        'SY': 'ar',      // Syria
-        'IQ': 'ar',      // Iraq
-        'PS': 'ar',      // Palestine
-        'MA': 'ar',      // Morocco
-        'DZ': 'ar',      // Algeria
-        'TN': 'ar',      // Tunisia
-        'LY': 'ar',      // Libya
-        'SD': 'ar',      // Sudan
-        'SO': 'ar'       // Somalia
-    };
-
-    const lang = countryLangMap[countryCode] || 'en';
-    console.log(`Country code: ${countryCode}, mapped to language: ${lang}`);
-    return lang;
-}
-
-// Function to get URL parameters
-function getUrlParameter(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-}
-
-// Function to get current language from URL, localStorage, or geolocation
-async function getCurrentLanguage() {
-    // First check URL parameter
-    const urlLang = getUrlParameter('lang');
-    if (urlLang && ['en', 'de', 'ar'].includes(urlLang)) {
-        console.log(`Language from URL: ${urlLang}`);
-        return urlLang;
-    }
-    
-    // Then check localStorage
-    const storedLang = localStorage.getItem('language');
-    if (storedLang && ['en', 'de', 'ar'].includes(storedLang)) {
-        console.log(`Language from localStorage: ${storedLang}`);
-        return storedLang;
-    }
-    
-    // Then use geolocation
-    const countryCode = await getCountryCode();
-    const geoLang = countryCode ? getLanguageFromCountry(countryCode) : 'en';
-    console.log(`Language from geolocation: ${geoLang}`);
-    return geoLang;
-}
-
-// Language switcher event listener
-document.addEventListener('DOMContentLoaded', async () => {
-    const languageSelect = document.getElementById('language-select');
-    if (!languageSelect) {
-        console.error('Language select element not found');
-        return;
-    }
-
-    // Get current language
-    const selectedLang = await getCurrentLanguage();
-
-    // Set the language select value and update content
-    console.log(`Setting language to: ${selectedLang}`);
-    languageSelect.value = selectedLang;
-    localStorage.setItem('language', selectedLang);
-    updateContent(selectedLang);
-
-    // Handle manual language selection
-    languageSelect.addEventListener('change', (e) => {
-        const lang = e.target.value;
-        if (['en', 'de', 'ar'].includes(lang)) { 
-            console.log(`Manual language selection: ${lang}`);
-            localStorage.setItem('language', lang);
-            updateContent(lang);
-            
-            // Update URL with language parameter without reloading
-            const newUrl = new URL(window.location);
-            newUrl.searchParams.set('lang', lang);
-            window.history.replaceState({}, '', newUrl);
-        } else {
-            console.warn(`Invalid language selected: ${lang}`);
-        }
-    });
-});

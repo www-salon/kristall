@@ -1,400 +1,476 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="de" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="title">Crystal Salon für Herren | Premium Barber in Berlin</title>
-    <meta name="description" data-i18n="meta.description" content="Crystal Salon für Herren - Premium Herrenfriseur in Berlin. Meisterhandwerk, luxuriöses Ambiente und individuelle Beratung.">
-    <link rel="stylesheet" href="style1.css">
+    <meta
+        name="description"
+        data-i18n-content="meta.description"
+        content="Kristall Salon für Herren in Berlin-Kreuzberg. Präzise Haarschnitte, Bartpflege, klassische Rasur und persönliche Beratung."
+    >
+    <meta name="theme-color" content="#123f70">
+    <title data-i18n="meta.title">Kristall Barber Berlin | Herrenfriseur in Kreuzberg</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <div class="logo-crystal">
-                    <div class="crystal-shape"></div>
-                    <span class="logo-text">Kristall</span>
-                </div>
-                <div class="logo-subtitle" data-i18n="nav.subtitle">SALON FÜR HERREN</div>
-            </div>
-            
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link" data-i18n="nav.home">Start</a></li>
-                <li><a href="#about" class="nav-link" data-i18n="nav.about">Über Uns</a></li>
-                <li><a href="#services" class="nav-link" data-i18n="nav.services">Leistungen</a></li>
-                <li><a href="#gallery" class="nav-link" data-i18n="nav.gallery">Galerie</a></li>
-                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
-                <li class="language-selector">
-                    <select id="language-select" aria-label="Select Language">
-                        <option value="de" data-flag="de">Deutsch</option>
-                        <option value="en" data-flag="gb">English</option>
-                        <option value="ar" data-flag="sa">العربية</option>
-                    </select>
-                </li>
-            </ul>
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <a class="skip-link" href="#main-content" data-i18n="accessibility.skip">Zum Inhalt springen</a>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title" data-i18n="hero.title">MEISTER <span class="highlight">HANDWERK</span><br>IN EINEM LUXUS <span class="highlight">AMBIENTE</span></h1>
-            <p class="hero-subtitle" data-i18n="hero.subtitle">Wo Tradition auf moderne Eleganz trifft</p>
-            <a href="#contact" class="cta-button" data-i18n="hero.cta">Termin vereinbaren</a>
-        </div>
-        
-        <div class="hero-crystals">
-            <div class="crystal crystal-1"></div>
-            <div class="crystal crystal-2"></div>
-            <div class="crystal crystal-3"></div>
-        </div>
-    </section>
+    <header class="site-header" id="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="#home" aria-label="Kristall Barber Berlin">
+                <span class="brand-mark" aria-hidden="true">
+                    <span class="barber-pole">
+                        <span class="barber-pole-cap barber-pole-cap-top"></span>
+                        <span class="barber-pole-body"></span>
+                        <span class="barber-pole-cap barber-pole-cap-bottom"></span>
+                    </span>
+                </span>
+                <span class="brand-copy">
+                    <strong>KRISTALL</strong>
+                    <small data-i18n="brand.subtitle">BARBER BERLIN</small>
+                </span>
+            </a>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-i18n="about.title">ÜBER UNS</h2>
-                <div class="section-divider">
-                    <div class="divider-line"></div>
-                    <div class="divider-crystal"></div>
-                    <div class="divider-line"></div>
-                </div>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="about-intro" data-i18n="about.intro">Willkommen im <span class="highlight-text">Kristall Salon für Herren</span>, wo Präzision auf Perfektion trifft.</p>
-                    <p data-i18n="about.description1">Seit über einem Jahrzehnt sind wir die erste Adresse für anspruchsvolle Herren in Berlin, die Wert auf Handwerkskunst, exklusive Produkte und ein unvergessliches Erlebnis legen.</p>
-                    <p data-i18n="about.description2">Unsere Meisterfriseure verbinden traditionelle Barber-Techniken mit modernsten Styling-Methoden, um für jeden Gast den perfekten Look zu kreieren.</p>
-                    
-                    <div class="about-features">
-                        <div class="feature">
-                            <i class="fas fa-award"></i>
-                            <h3 data-i18n="about.feature1.title">Meisterhandwerk</h3>
-                            <p data-i18n="about.feature1.description">Jährliche Weiterbildung unserer Friseure</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-spa"></i>
-                            <h3 data-i18n="about.feature2.title">Luxusambiente</h3>
-                            <p data-i18n="about.feature2.description">Exklusives Interior mit höchstem Komfort</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-gem"></i>
-                            <h3 data-i18n="about.feature3.title">Premium Produkte</h3>
-                            <p data-i18n="about.feature3.description">Nur ausgewählte Marken für beste Ergebnisse</p>
-                        </div>
+            <nav class="desktop-nav" aria-label="Primary navigation">
+                <a href="#story" data-i18n="nav.story">Der Salon</a>
+                <a href="#services" data-i18n="nav.services">Leistungen</a>
+                <a href="#gallery" data-i18n="nav.gallery">Galerie</a>
+                <a href="#visit" data-i18n="nav.visit">Besuch</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="language-control" id="language-control">
+                    <button
+                        class="language-trigger"
+                        id="language-trigger"
+                        type="button"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-controls="language-menu"
+                        aria-label="Sprache auswählen"
+                    >
+                        <svg class="language-globe" viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M3 12h18M12 3c2.2 2.5 3.3 5.5 3.3 9S14.2 18.5 12 21M12 3C9.8 5.5 8.7 8.5 8.7 12s1.1 6.5 3.3 9"></path>
+                        </svg>
+                        <span id="language-current">DE</span>
+                        <svg class="language-chevron" viewBox="0 0 12 8" aria-hidden="true">
+                            <path d="M1 1.5 6 6.5l5-5"></path>
+                        </svg>
+                    </button>
+                    <div class="language-menu" id="language-menu" role="listbox" aria-label="Sprache auswählen" hidden>
+                        <button type="button" role="option" data-language="de" aria-selected="true">DE</button>
+                        <button type="button" role="option" data-language="en" aria-selected="false">EN</button>
+                        <button type="button" role="option" data-language="ar" aria-selected="false">AR</button>
                     </div>
                 </div>
-                
-                <div class="about-image">
-                    <div class="image-frame">
-                        <img src="images/1.webp" alt="Crystal Salon Interior" class="about-img">
-                        <div class="frame-decoration"></div>
-                    </div>
-                </div>
+
+                <a class="button button-small desktop-booking" href="tel:+4917626598848">
+                    <i class="fa-solid fa-phone"></i>
+                    <span data-i18n="nav.book">Termin buchen</span>
+                </a>
+
+                <button
+                    class="menu-toggle"
+                    id="menu-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                    aria-label="Menü öffnen"
+                >
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-i18n="services.title">UNSERE LEISTUNGEN</h2>
-                <div class="section-divider">
-                    <div class="divider-line"></div>
-                    <div class="divider-crystal"></div>
-                    <div class="divider-line"></div>
-                </div>
-                <p class="section-subtitle" data-i18n="services.subtitle">Transparente Preise für erstklassige Dienstleistungen</p>
-            </div>
-            
-            <div class="services-grid">
-                <!-- Haarschnitt Services -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cut"></i>
-                    </div>
-                    <h3 data-i18n="services.haircut.title">Haarschnitt</h3>
-                    <p data-i18n="services.haircut.description">Professioneller Herrenhaarschnitt mit Beratung, Haarwäsche und Styling</p>
-                    <div class="service-price"></div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <h3 data-i18n="services.kids.title">Kinderfrisuren</h3>
-                    <p data-i18n="services.kids.description">Spezieller Haarschnitt für Kinder bis 10 Jahre in kindgerechter Atmosphäre</p>
-                    <div class="service-price"></div>
-                </div>
-                
-                <!-- Bart Services -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3 data-i18n="services.beardShave.title">Bart Rasur</h3>
-                    <p data-i18n="services.beardShave.description">Komplette Bartrasur mit Rasiercreme, warmen Tüchern und After-Shave-Pflege</p>
-                    <div class="service-price"></div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-scissors"></i>
-                    </div>
-                    <h3 data-i18n="services.beardTrim.title">Bart Schneiden</h3>
-                    <p data-i18n="services.beardTrim.description">Bart trimmen, in Form schneiden und mit Öl pflegen für gepflegte Optik</p>
-                    <div class="service-price"></div>
-                </div>
-                
-                <!-- Gesichtsbehandlungen -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <h3 data-i18n="services.faceMask.title">Maske für Gesicht</h3>
-                    <p data-i18n="services.faceMask.description">Pflegende Gesichtsmaske zur Reinigung, Revitalisierung und Hautstraffung</p>
-                    <div class="service-price"></div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3 data-i18n="services.eyebrows.title">Augenbrauen</h3>
-                    <p data-i18n="services.eyebrows.description">Präzises Augenbrauen zupfen mit traditioneller Fadentechnik</p>
-                    <div class="service-price"></div>
-                </div>
-                
-                <!-- Haarentfernung -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <h3 data-i18n="services.waxing.title">Wachs</h3>
-                    <p data-i18n="services.waxing.description">Haarentfernung mit Wachs für kleine Bereiche wie Nase oder Ohren</p>
-                    <div class="service-price"></div>
-                </div>
-                
-                <!-- Haarwäsche & Styling -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shower"></i>
-                    </div>
-                    <h3 data-i18n="services.wash.title">Waschen</h3>
-                    <p data-i18n="services.wash.description">Haare waschen mit Premium-Shampoo und Kopfmassage</p>
-                    <div class="service-price"></div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-wind"></i>
-                    </div>
-                    <h3 data-i18n="services.dryStyling.title">Trocken Föhnen</h3>
-                    <p data-i18n="services.dryStyling.description">Professionelles Trockenföhnen und Styling der Haare</p>
-                    <div class="service-price"></div>
-                </div>
-                
-                <!-- Pakete -->
-                <div class="service-card package-card">
-                    <div class="service-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3 data-i18n="services.complete.title">Komplett-Service</h3>
-                    <p data-i18n="services.complete.description">Waschen · Schneiden · Bartrasieren · Gesichtshaarentfernung (Wachs oder Faden)</p>
-                    <div class="service-price"></div>
-                </div>
-                
-                <div class="service-card package-card">
-                    <div class="service-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3 data-i18n="services.fullFace.title">Gesichtshaarentfernung</h3>
-                    <p data-i18n="services.fullFace.description">Komplette Gesichtshaarentfernung (Wachs oder Faden) für makellose Haut</p>
-                    <div class="service-price"></div>
-                </div>
-                
-                <!-- Kostenlose Beratung Card -->
-                <div class="service-card consultation-card">
-                    <div class="service-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3 data-i18n="services.consultation.title">Kostenlose Beratung</h3>
-                    <p data-i18n="services.consultation.description">Persönliche Stilberatung ohne Verpflichtung. Gemeinsam finden wir Ihren perfekten Look.</p>
-                    <div class="service-price"></div>
-                </div>
-            </div>
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+            <a href="#story" data-i18n="nav.story">Der Salon</a>
+            <a href="#services" data-i18n="nav.services">Leistungen</a>
+            <a href="#gallery" data-i18n="nav.gallery">Galerie</a>
+            <a href="#visit" data-i18n="nav.visit">Besuch</a>
+            <a class="button" href="tel:+4917626598848">
+                <i class="fa-solid fa-phone"></i>
+                <span data-i18n="nav.book">Termin buchen</span>
+            </a>
         </div>
-    </section>
+    </header>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-i18n="gallery.title">GALERIE</h2>
-                <div class="section-divider">
-                    <div class="divider-line"></div>
-                    <div class="divider-crystal"></div>
-                    <div class="divider-line"></div>
-                </div>
+    <main id="main-content">
+        <section class="hero" id="home">
+            <div class="hero-media" aria-hidden="true">
+                <img src="images/2.webp" alt="">
             </div>
-            
-            <div class="gallery-container">
-                <div class="gallery-main">
-                    <div class="main-image-container">
-                        <img id="main-gallery-image" src="images/1.webp" alt="Salon Interior">
-                        <div class="image-overlay">
-                            <h3 data-i18n="gallery.overlay.title">Unser Salon Ambiente</h3>
-                            <p data-i18n="gallery.overlay.description">Luxuriöses Interior mit höchstem Komfort</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-thumbnails">
-                    <div class="thumbnail active" data-image="images/1.webp">
-                        <img src="images/1.webp" alt="Salon Interior">
-                    </div>
-                    <div class="thumbnail" data-image="images/2.webp">
-                        <img src="images/2.webp" alt="Workstation">
-                    </div>
-                    <div class="thumbnail" data-image="images/8.jpeg">
-                        <img src="images/8.jpeg" alt="Workstation">
-                    </div>
-                    <div class="thumbnail" data-image="images/7.jpeg">
-                        <img src="images/7.jpeg" alt="Workstation">
-                    </div>
-                    <div class="thumbnail" data-image="images/3.webp">
-                        <img src="images/3.webp" alt="Beard Care">
-                    </div>
-                    <div class="thumbnail" data-image="images/4.webp">
-                        <img src="images/4.webp" alt="Haircut">
-                    </div>
-                    <!-- <div class="thumbnail" data-image="images/5.jpg">
-                        <img src="images/5.jpg" alt="Products">
-                    </div> -->
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="hero-shade" aria-hidden="true"></div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-i18n="contact.title">KONTAKT & ANFAHRT</h2>
-                <div class="section-divider">
-                    <div class="divider-line"></div>
-                    <div class="divider-crystal"></div>
-                    <div class="divider-line"></div>
-                </div>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3 data-i18n="contact.address.title">Adresse</h3>
-                        <p data-i18n="contact.address.details">Urbanstraße 37<br>10967 Berlin<br>Deutschland</p>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3 data-i18n="contact.phone.title">Telefon</h3>
-                        <p>
-                            <a href="tel:+4917626598848" class="phone-link">+49 176 26598848</a>
-                        </p>
-                        <p class="contact-note" data-i18n="contact.phone.note">Telefonische Terminvereinbarung</p>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3 data-i18n="contact.hours.title">Öffnungszeiten</h3>
-                        <p>
-                            <span data-i18n="contact.hours.weekdays">Montag - Freitag:</span> 10:00 - 19:00<br>
-                            <span data-i18n="contact.hours.saturday">Samstag:</span> 10:00 - 18:00<br>
-                            <span data-i18n="contact.hours.sunday">Sonntag:</span> <span data-i18n="contact.hours.closed">Geschlossen</span>
-                        </p>
-                    </div>
-                    
-                    <div class="contact-instruction">
-                        <h3 data-i18n="contact.appointment.title">Terminvereinbarung</h3>
-                        <p data-i18n="contact.appointment.description">Wir legen Wert auf persönliche Beratung. Bitte vereinbaren Sie Ihren Termin telefonisch während unserer Öffnungszeiten.</p>
+            <div class="hero-inner">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        <span data-i18n="hero.eyebrow">BERLIN · KREUZBERG</span>
+                    </p>
+                    <h1 data-i18n="hero.title">Guter Stil beginnt mit einem präzisen Schnitt.</h1>
+                    <p class="hero-lead" data-i18n="hero.lead">
+                        Klassisches Barber-Handwerk, moderne Looks und ehrliche Beratung in der Urbanstraße.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-light" href="tel:+4917626598848">
+                            <i class="fa-solid fa-phone"></i>
+                            <span data-i18n="hero.ctaPrimary">Jetzt Termin buchen</span>
+                        </a>
+                        <a class="text-link" href="#services">
+                            <span data-i18n="hero.ctaSecondary">Leistungen ansehen</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
                     </div>
                 </div>
-                
-                <div class="map-container">
-                    <div id="map">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2427.577558750816!2d13.421446315807535!3d52.52090297981506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e5265c5d38d%3A0x8dc36aa5a91b6e5d!2sUrbanstra%C3%9Fe%2037%2C%2010967%20Berlin!5e0!3m2!1sen!2sde!4v1620000000000!5m2!1sen!2sde" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy"
-                            title="Crystal Salon Location Map">
-                        </iframe>
-                    </div>
-                    <div class="map-overlay">
-                        <div class="map-pin">
-                            <i class="fas fa-map-pin"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <div class="logo-crystal">
-                        <div class="crystal-shape"></div>
-                        <span class="logo-text">Kristall</span>
+                <aside class="hero-card reveal" aria-label="Salon information">
+                    <span class="hero-card-kicker" data-i18n="hero.cardKicker">HEUTE FÜR DICH DA</span>
+                    <div class="hero-card-row">
+                        <i class="fa-regular fa-clock"></i>
+                        <div>
+                            <strong data-i18n="hero.cardHoursTitle">Öffnungszeiten</strong>
+                            <span data-i18n="hero.cardHours">Mo–Fr 10–19 Uhr · Sa 10–18 Uhr</span>
+                        </div>
                     </div>
-                    <div class="logo-subtitle" data-i18n="footer.subtitle">SALON FÜR HERREN</div>
+                    <div class="hero-card-row">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong data-i18n="hero.cardLocationTitle">Mitten in Kreuzberg</strong>
+                            <span>Urbanstraße 37 · 10967 Berlin</span>
+                        </div>
+                    </div>
+                    <a href="#visit" class="hero-card-link">
+                        <span data-i18n="hero.cardLink">Anfahrt & Kontakt</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </aside>
+            </div>
+
+            <div class="hero-index" aria-hidden="true">01</div>
+        </section>
+
+        <section class="trust-strip" aria-label="Salon highlights">
+            <div class="trust-inner">
+                <div class="trust-item reveal">
+                    <span class="trust-number">01</span>
+                    <div>
+                        <strong data-i18n="trust.oneTitle">Präzision</strong>
+                        <span data-i18n="trust.oneText">Saubere Konturen, klare Formen.</span>
+                    </div>
                 </div>
-                
-                <div class="footer-info">
-                    <p data-i18n="footer.copyright">&copy; 2026 Kristall Salon für Herren. Alle Rechte vorbehalten.</p>
-                    <p>Urbanstraße 37, 10967 Berlin | <a href="tel:+4917626598848" class="phone-link">+49 176 26598848</a></p>
+                <div class="trust-item reveal">
+                    <span class="trust-number">02</span>
+                    <div>
+                        <strong data-i18n="trust.twoTitle">Persönlich</strong>
+                        <span data-i18n="trust.twoText">Ein Look, der wirklich zu dir passt.</span>
+                    </div>
                 </div>
-                
-                <!-- <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.google.com/search?client=mobilesearchapp&sca_esv=86beabca145da5de&channel=iss&cs=0&hl=en_GB&rlz=1MDAPLA_en-GBDE999DE999&v=403.0.853868894&sxsrf=ANbL-n7O6GUGEZlUqvw3hlCCSHcy-9ltRQ:1768409475552&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qORaQyNURGF0IUviAAqaZUecKhv_fZ9mNm6QFjdxVGTuwCg8KJRdNCaWxo4mIaLefOJq1e-96n2LZJnpbvxxK8-5arLYtPosVucBbjBiH2i88nIogDGD4NhqRd9iuW2vcbfvZ6Pw%3D&q=%D8%B5%D8%A7%D9%84%D9%88%D9%86+%D9%83%D8%B1%D9%8A%D8%B3%D8%AA%D8%A7%D9%84+%D9%84%D9%84%D8%B1%D8%AC%D8%A7%D9%84+Reviews&sa=X&ved=2ahUKEwjP3O3UvouSAxXJbPEDHffPJuwQ0bkNegQIJhAF&biw=1536&bih=730&dpr=1.25&aic=0" class="social-link" target="_blank"><i class="fab fa-google"></i></a>
-                </div> -->
+                <div class="trust-item reveal">
+                    <span class="trust-number">03</span>
+                    <div>
+                        <strong data-i18n="trust.threeTitle">Handwerk</strong>
+                        <span data-i18n="trust.threeText">Barber-Technik ohne Show.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story section" id="story">
+            <div class="section-shell story-grid">
+                <div class="story-visual reveal">
+                    <div class="image-block image-block-main">
+                        <img src="images/1.webp" alt="Innenansicht des Kristall Salons" data-i18n-alt="story.mainImageAlt">
+                    </div>
+                    <div class="image-block image-block-float">
+                        <img src="images/8.jpeg" alt="Barber im Kristall Salon" data-i18n-alt="story.secondaryImageAlt">
+                    </div>
+                    <div class="story-stamp" aria-hidden="true">
+                        <span>BERLIN</span>
+                        <i class="fa-solid fa-scissors"></i>
+                        <span>KREUZBERG</span>
+                    </div>
+                </div>
+
+                <div class="story-copy reveal">
+                    <p class="section-label" data-i18n="story.label">DER SALON</p>
+                    <h2 data-i18n="story.title">Nicht einfach Haare schneiden. Einen Look sauber aufbauen.</h2>
+                    <p class="section-lead" data-i18n="story.lead">
+                        Kristall ist ein unkomplizierter Herrenfriseur in Kreuzberg für Männer, die Wert auf einen gepflegten, präzisen Look legen.
+                    </p>
+                    <p data-i18n="story.body">
+                        Ob klassischer Schnitt, moderner Fade, Bartkontur oder komplette Pflege: Wir nehmen uns Zeit für Form, Proportion und Finish. Ohne unnötigen Luxus, aber mit dem Anspruch, dass du den Salon sichtbar besser verlässt.
+                    </p>
+
+                    <div class="story-points">
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            <span data-i18n="story.pointOne">Beratung vor jedem Schnitt</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            <span data-i18n="story.pointTwo">Klassische und moderne Techniken</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check"></i>
+                            <span data-i18n="story.pointThree">Klare Ergebnisse, alltagstaugliches Styling</span>
+                        </div>
+                    </div>
+
+                    <a class="text-link text-link-dark" href="tel:+4917626598848">
+                        <span data-i18n="story.link">Termin telefonisch vereinbaren</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="services section" id="services">
+            <div class="section-shell">
+                <div class="section-heading reveal">
+                    <div>
+                        <p class="section-label section-label-light" data-i18n="services.label">LEISTUNGEN</p>
+                        <h2 data-i18n="services.title">Alles, was ein guter Barber können muss.</h2>
+                    </div>
+                    <p data-i18n="services.intro">
+                        Vom schnellen Fresh-up bis zum vollständigen Barber-Service. Preise erfährst du direkt bei uns im Salon oder telefonisch.
+                    </p>
+                </div>
+
+                <div class="service-list">
+                    <article class="service-row reveal">
+                        <span class="service-index">01</span>
+                        <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+                        <div class="service-copy">
+                            <h3 data-i18n="services.haircut.title">Herrenhaarschnitt</h3>
+                            <p data-i18n="services.haircut.text">Beratung, präziser Schnitt und sauberes Finish.</p>
+                        </div>
+                        <span class="service-tag" data-i18n="services.haircut.tag">CUT</span>
+                    </article>
+
+                    <article class="service-row reveal">
+                        <span class="service-index">02</span>
+                        <div class="service-icon"><i class="fa-solid fa-user"></i></div>
+                        <div class="service-copy">
+                            <h3 data-i18n="services.beard.title">Bart & Konturen</h3>
+                            <p data-i18n="services.beard.text">Trimmen, formen und definieren für klare Linien.</p>
+                        </div>
+                        <span class="service-tag" data-i18n="services.beard.tag">BEARD</span>
+                    </article>
+
+                    <article class="service-row reveal">
+                        <span class="service-index">03</span>
+                        <div class="service-icon"><i class="fa-solid fa-soap"></i></div>
+                        <div class="service-copy">
+                            <h3 data-i18n="services.shave.title">Klassische Rasur</h3>
+                            <p data-i18n="services.shave.text">Glatte Rasur mit Vorbereitung, warmem Tuch und Pflege.</p>
+                        </div>
+                        <span class="service-tag" data-i18n="services.shave.tag">SHAVE</span>
+                    </article>
+
+                    <article class="service-row reveal">
+                        <span class="service-index">04</span>
+                        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <div class="service-copy">
+                            <h3 data-i18n="services.care.title">Gesicht & Pflege</h3>
+                            <p data-i18n="services.care.text">Maske, Augenbrauen und Haarentfernung mit Wachs oder Faden.</p>
+                        </div>
+                        <span class="service-tag" data-i18n="services.care.tag">CARE</span>
+                    </article>
+
+                    <article class="service-row reveal">
+                        <span class="service-index">05</span>
+                        <div class="service-icon"><i class="fa-solid fa-child-reaching"></i></div>
+                        <div class="service-copy">
+                            <h3 data-i18n="services.kids.title">Kinderhaarschnitt</h3>
+                            <p data-i18n="services.kids.text">Ruhiger, sauberer Schnitt für die jüngeren Gäste.</p>
+                        </div>
+                        <span class="service-tag" data-i18n="services.kids.tag">KIDS</span>
+                    </article>
+
+                    <article class="service-row reveal">
+                        <span class="service-index">06</span>
+                        <div class="service-icon"><i class="fa-solid fa-crown"></i></div>
+                        <div class="service-copy">
+                            <h3 data-i18n="services.complete.title">Komplett-Service</h3>
+                            <p data-i18n="services.complete.text">Waschen, schneiden, Bart und Gesichtspflege als Gesamtpaket.</p>
+                        </div>
+                        <span class="service-tag" data-i18n="services.complete.tag">FULL</span>
+                    </article>
+                </div>
+
+                <div class="services-footer reveal">
+                    <p>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span data-i18n="services.note">Du bist unsicher, was du brauchst? Komm vorbei oder ruf kurz an. Wir beraten dich gern.</span>
+                    </p>
+                    <a class="button button-outline-light" href="tel:+4917626598848">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+49 176 26598848</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery section" id="gallery">
+            <div class="section-shell">
+                <div class="section-heading gallery-heading reveal">
+                    <div>
+                        <p class="section-label" data-i18n="gallery.label">IM SALON</p>
+                        <h2 data-i18n="gallery.title">Echt. Lokal. Kreuzberg.</h2>
+                    </div>
+                    <p data-i18n="gallery.intro">
+                        Kein Stockfoto-Showroom. Das ist unser echter Salon in der Urbanstraße und das Team, das dich hier empfängt.
+                    </p>
+                </div>
+
+                <div class="gallery-grid">
+                    <button class="gallery-item gallery-item-wide reveal" type="button" data-gallery="images/2.webp">
+                        <img src="images/2.webp" alt="Außenansicht des Kristall Salons" data-i18n-alt="gallery.imageOneAlt">
+                        <span class="gallery-caption" data-i18n="gallery.imageOneLabel">Urbanstraße 37</span>
+                    </button>
+                    <button class="gallery-item gallery-item-tall reveal" type="button" data-gallery="images/7.jpeg">
+                        <img src="images/7.jpeg" alt="Barber im Salon" data-i18n-alt="gallery.imageTwoAlt">
+                        <span class="gallery-caption" data-i18n="gallery.imageTwoLabel">Dein Barber</span>
+                    </button>
+                    <button class="gallery-item reveal" type="button" data-gallery="images/1.webp">
+                        <img src="images/1.webp" alt="Arbeitsplätze im Salon" data-i18n-alt="gallery.imageThreeAlt">
+                        <span class="gallery-caption" data-i18n="gallery.imageThreeLabel">Der Salon</span>
+                    </button>
+                    <button class="gallery-item reveal" type="button" data-gallery="images/8.jpeg">
+                        <img src="images/8.jpeg" alt="Barberstuhl im Salon" data-i18n-alt="gallery.imageFourAlt">
+                        <span class="gallery-caption" data-i18n="gallery.imageFourLabel">Der Platz für deinen nächsten Schnitt</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="visit section" id="visit">
+            <div class="section-shell visit-grid">
+                <div class="visit-copy reveal">
+                    <p class="section-label section-label-light" data-i18n="visit.label">KOMM VORBEI</p>
+                    <h2 data-i18n="visit.title">Dein nächster Schnitt ist in Kreuzberg.</h2>
+                    <p data-i18n="visit.intro">
+                        Ruf uns für deinen Termin an. Du findest uns in der Urbanstraße 37, nur wenige Minuten vom Hermannplatz entfernt.
+                    </p>
+
+                    <a class="visit-phone" href="tel:+4917626598848">
+                        <span class="visit-phone-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M7.1 2.8 4.2 4.2c-.9.4-1.4 1.4-1.2 2.4 1.5 7.2 7.2 12.9 14.4 14.4 1 .2 2-.3 2.4-1.2l1.4-2.9c.4-.9.2-1.9-.6-2.5l-3-2.2c-.7-.5-1.7-.5-2.4.1l-1.7 1.4a15.7 15.7 0 0 1-3.2-3.2l1.4-1.7c.6-.7.6-1.7.1-2.4l-2.2-3c-.6-.8-1.6-1-2.5-.6Z"></path>
+                            </svg>
+                        </span>
+                        <span>
+                            <small data-i18n="visit.phoneLabel">TERMIN & FRAGEN</small>
+                            <strong>+49 176 26598848</strong>
+                        </span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                    <div class="visit-details">
+                        <div>
+                            <span class="visit-detail-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"></path>
+                                    <circle cx="12" cy="9" r="2.4"></circle>
+                                </svg>
+                            </span>
+                            <div>
+                                <strong data-i18n="visit.addressTitle">Adresse</strong>
+                                <span>Urbanstraße 37<br>10967 Berlin</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="visit-detail-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="9"></circle>
+                                    <path d="M12 7v5l3.5 2"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <strong data-i18n="visit.hoursTitle">Öffnungszeiten</strong>
+                                <span data-i18n="visit.hoursWeekdays">Mo–Fr · 10:00–19:00</span>
+                                <span data-i18n="visit.hoursSaturday">Sa · 10:00–18:00</span>
+                                <span data-i18n="visit.hoursSunday">So · Geschlossen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-card reveal">
+                    <iframe
+                        src="https://www.google.com/maps?q=Urbanstra%C3%9Fe%2037%2C%2010967%20Berlin&output=embed"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Kristall Barber Berlin Karte"
+                    ></iframe>
+                    <div class="map-label">
+                        <span class="map-dot"></span>
+                        <span>KRISTALL · URBANSTRASSE 37</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-shell">
+            <div class="footer-top">
+                <a class="brand brand-footer" href="#home">
+                    <span class="brand-mark" aria-hidden="true">
+                        <span class="barber-pole">
+                            <span class="barber-pole-cap barber-pole-cap-top"></span>
+                            <span class="barber-pole-body"></span>
+                            <span class="barber-pole-cap barber-pole-cap-bottom"></span>
+                        </span>
+                    </span>
+                    <span class="brand-copy">
+                        <strong>KRISTALL</strong>
+                        <small data-i18n="brand.subtitle">BARBER BERLIN</small>
+                    </span>
+                </a>
+                <p data-i18n="footer.line">Präzise Schnitte. Klare Konturen. Kreuzberg.</p>
+                <a class="footer-top-link" href="#home" aria-label="Nach oben">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <span data-i18n="footer.copyright">© 2026 Kristall Barber Berlin. Alle Rechte vorbehalten.</span>
+                <span>Urbanstraße 37 · 10967 Berlin</span>
             </div>
         </div>
     </footer>
 
-    <!-- Go to Top Button -->
-    <button id="goTopBtn" class="go-top-btn" aria-label="Nach oben scrollen">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+    <div class="mobile-booking-bar">
+        <a href="tel:+4917626598848">
+            <i class="fa-solid fa-phone"></i>
+            <span data-i18n="mobileBooking">Termin buchen</span>
+        </a>
+    </div>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+        <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Galerie schließen">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="lightbox-image" src="" alt="">
+    </div>
 
     <script src="translations.js"></script>
     <script src="main.js"></script>
