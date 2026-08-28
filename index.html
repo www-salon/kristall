@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta
         name="description"
         data-i18n-content="meta.description"
@@ -21,8 +24,15 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
-    <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" href="favicon.ico?v=20260828-2" sizes="any">
+    <script>
+        window.KRISTALL_ASSET_VERSION = Date.now().toString();
+
+        const siteStylesheet = document.createElement("link");
+        siteStylesheet.rel = "stylesheet";
+        siteStylesheet.href = `style1.css?v=${window.KRISTALL_ASSET_VERSION}`;
+        document.head.appendChild(siteStylesheet);
+    </script>
 </head>
 <body>
     <a class="skip-link" href="#main-content" data-i18n="accessibility.skip">Zum Inhalt springen</a>
@@ -111,7 +121,7 @@
     <main id="main-content">
         <section class="hero" id="home">
             <div class="hero-media" aria-hidden="true">
-                <img src="images/2.webp" alt="">
+                <img src="images/2.webp?v=20260828-2" alt="">
             </div>
             <div class="hero-shade" aria-hidden="true"></div>
 
@@ -193,10 +203,10 @@
             <div class="section-shell story-grid">
                 <div class="story-visual reveal">
                     <div class="image-block image-block-main">
-                        <img src="images/1.webp" alt="Innenansicht des Kristall Salons" data-i18n-alt="story.mainImageAlt">
+                        <img src="images/1.webp?v=20260828-2" alt="Innenansicht des Kristall Salons" data-i18n-alt="story.mainImageAlt">
                     </div>
                     <div class="image-block image-block-float">
-                        <img src="images/8.jpeg" alt="Barber im Kristall Salon" data-i18n-alt="story.secondaryImageAlt">
+                        <img src="images/8.jpeg?v=20260828-2" alt="Barber im Kristall Salon" data-i18n-alt="story.secondaryImageAlt">
                     </div>
                     <div class="story-stamp" aria-hidden="true">
                         <span>BERLIN</span>
@@ -339,19 +349,19 @@
 
                 <div class="gallery-grid">
                     <button class="gallery-item gallery-item-wide reveal" type="button" data-gallery="images/2.webp">
-                        <img src="images/2.webp" alt="Außenansicht des Kristall Salons" data-i18n-alt="gallery.imageOneAlt">
+                        <img src="images/2.webp?v=20260828-2" alt="Außenansicht des Kristall Salons" data-i18n-alt="gallery.imageOneAlt">
                         <span class="gallery-caption" data-i18n="gallery.imageOneLabel">Urbanstraße 37</span>
                     </button>
                     <button class="gallery-item gallery-item-tall reveal" type="button" data-gallery="images/7.jpeg">
-                        <img src="images/7.jpeg" alt="Barber im Salon" data-i18n-alt="gallery.imageTwoAlt">
+                        <img src="images/7.jpeg?v=20260828-2" alt="Barber im Salon" data-i18n-alt="gallery.imageTwoAlt">
                         <span class="gallery-caption" data-i18n="gallery.imageTwoLabel">Dein Barber</span>
                     </button>
                     <button class="gallery-item reveal" type="button" data-gallery="images/1.webp">
-                        <img src="images/1.webp" alt="Arbeitsplätze im Salon" data-i18n-alt="gallery.imageThreeAlt">
+                        <img src="images/1.webp?v=20260828-2" alt="Arbeitsplätze im Salon" data-i18n-alt="gallery.imageThreeAlt">
                         <span class="gallery-caption" data-i18n="gallery.imageThreeLabel">Der Salon</span>
                     </button>
                     <button class="gallery-item reveal" type="button" data-gallery="images/8.jpeg">
-                        <img src="images/8.jpeg" alt="Barberstuhl im Salon" data-i18n-alt="gallery.imageFourAlt">
+                        <img src="images/8.jpeg?v=20260828-2" alt="Barberstuhl im Salon" data-i18n-alt="gallery.imageFourAlt">
                         <span class="gallery-caption" data-i18n="gallery.imageFourLabel">Der Platz für deinen nächsten Schnitt</span>
                     </button>
                 </div>
@@ -472,7 +482,20 @@
         <img id="lightbox-image" src="" alt="">
     </div>
 
-    <script src="translations.js"></script>
-    <script src="main.js"></script>
+    <script>
+        (() => {
+            const version = window.KRISTALL_ASSET_VERSION || Date.now().toString();
+            const translationsScript = document.createElement("script");
+            translationsScript.src = `translations.js?v=${version}`;
+
+            translationsScript.addEventListener("load", () => {
+                const mainScript = document.createElement("script");
+                mainScript.src = `main.js?v=${version}`;
+                document.body.appendChild(mainScript);
+            });
+
+            document.body.appendChild(translationsScript);
+        })();
+    </script>
 </body>
 </html>
