@@ -2573,3 +2573,22 @@ html[dir="rtl"] .hero-shade {
         width: 19px !important;
     }
 }
+
+/* Small-device section-label contrast */
+@media (max-width: 600px) {
+    .eyebrow,
+    .section-label,
+    .section-label-light,
+    .hero-card-kicker {
+        color: #ff3850 !important;
+        font-weight: 800 !important;
+        opacity: 1 !important;
+        text-shadow: 0 0 0.01px currentColor;
+    }
+
+    .eyebrow-line {
+        background: #ff3850 !important;
+        opacity: 1 !important;
+    }
+}
+
